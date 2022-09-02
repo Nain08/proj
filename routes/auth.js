@@ -42,6 +42,8 @@ router.post("/",async(req,res)=>{
 				.status(400)
 				.send({ message: "An Email sent to your account please verify" });
 		}
+        
+		await User.updateOne({ _id: user._id},{verified: true });
         const token=user.generateAuthToken();
         res.status(200).send({data:token,message:"Logged in Successfully"})
     }
