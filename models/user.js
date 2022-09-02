@@ -8,7 +8,6 @@ const userSchema=new mongoose.Schema({
     lastName:{type:String,required:true},
     email:{type:String,required:true},
     password:{type:String,required:true},
-    contact:{type:String,required:true},
     verified:{type:Boolean,default:false}
 });
 
@@ -24,8 +23,7 @@ const validate=(data)=>{
         firstName:Joi.string().required().label("First Name"),
         lastName:Joi.string().required().label("Last Name"),
         email:Joi.string().email().required().label("Email"),
-        password:passwordComplexity().required().label("Password"),
-        contact:Joi.string().required().label("Contact")
+        password:passwordComplexity().required().label("Password")
     });
     return schema.validate(data)
 };
