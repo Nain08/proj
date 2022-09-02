@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
 
 const SignUp = () => {
@@ -21,7 +21,7 @@ const SignUp = () => {
 		e.preventDefault();
 		try {
 			console.log(data);
-			const url = "/api/users";
+			const url = "http://localhost:8080/api/users";
 			const { data: res } = await axios.post(url, data);
 			setMsg(res.message)
 		} catch (error) {

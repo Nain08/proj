@@ -18,7 +18,7 @@ function Header() {
             <img src={icon} alt="icon" className="icon" />
             Authenticator
           </a>
-          <div>
+          {/* <div>
           <button
             className="custom-toggler navbar-toggler"
             type="button"
@@ -53,7 +53,7 @@ function Header() {
               </li>
             </ul>
           </div>
-          </div>
+          </div> */}
         </div>
       </nav>
     </div>

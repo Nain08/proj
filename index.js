@@ -6,6 +6,8 @@ const connection=require("./db");
 const userRoutes=require("./routes/users");
 const authRoutes=require("./routes/auth");
 const path=require('path');
+const passwordResetRoutes=require('./routes/passwordReset');
+
 
 // database connection
 connection();
@@ -24,6 +26,7 @@ app.get("/api", (req, res) => {
 //routes
 app.use("/api/users",userRoutes);
 app.use("/api/auth",authRoutes);
+app.use("/api/password-reset",passwordResetRoutes);
 
 const port=process.env.PORT||8080;
 

@@ -18,14 +18,12 @@ const Login = () => {
 	const handleSubmit = async (e) => 
 	{
 		e.preventDefault();
-		try {
+		try{
 			console.log(data);
-			
-			const url = "/api/auth";
+			const url = "http://localhost:8080/api/auth";
 			const { data: res } = await axios.post(url, data);
             localStorage.setItem("token",res.data);
-            window.location="/"
-
+            window.location="/get-phone-number"
 		} catch (error) {
 			if (
 				error.response &&
@@ -61,6 +59,9 @@ const Login = () => {
 							required
 							className={styles.input}
 						/>
+						<Link to="/forgot-password" style={{alignSelf:"flex-start"}}>
+						 <p style={{padding:"0 15px"}}>Forgot Password ? </p>
+						</Link>
 						{error && <div className={styles.error_msg}>{error}</div>}
 						<button type="submit" className={styles.grey_btn}>
 							Sign In
