@@ -10,7 +10,7 @@ const ForgotPassword = () => {
         e.preventDefault();
         try {
             
-            const url=`http://localhost:8080/api/password-reset`;
+            const url=`/password-reset`;
             const { data }=await axios.post(url,{email});
             console.log(data);
             setMsg(data.message);
